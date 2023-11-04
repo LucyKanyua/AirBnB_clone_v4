@@ -1,9 +1,9 @@
-$(document).ready(function() {
+$(document).ready(function () {
   const selectedAmenities = {};
 
-  $('input[type="checkbox"]').change(function() {
-    const amenityId = $(this).data("id");
-    const amenityName = $(this).data("name");
+  $('input[type="checkbox"]').change(function () {
+    const amenityId = $(this).data('id');
+    const amenityName = $(this).data('name');
 
     if (this.checked) {
       selectedAmenities[amenityId] = amenityName;
@@ -17,7 +17,7 @@ $(document).ready(function() {
 
   const apiStatusDiv = $('#api_status');
 
-  $.get('http://0.0.0.0:5001/api/v1/status/', function(data) {
+  $.get('http://0.0.0.0:5001/api/v1/status/', function (data) {
     if (data.status === 'OK') {
       apiStatusDiv.addClass('available');
     } else {
